@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Keys ###
+app.key
+app.key.pub
