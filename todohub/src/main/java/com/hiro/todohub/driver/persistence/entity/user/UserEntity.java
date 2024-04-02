@@ -43,6 +43,15 @@ public class UserEntity {
         inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
     private Set<RoleEntity> roles;
+    
+    public UserEntity(String name, String email, String password, String state, String bio, Set<RoleEntity> roles) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.state = state;
+        this.bio = bio;
+        this.roles = roles;
+    }
 
     public UserEntity(UUID userId, String name, String email, String password, String state, String bio, Set<RoleEntity> roles) {
         this.userId = userId;

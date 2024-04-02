@@ -4,7 +4,7 @@ public enum RoleType {
     ADMIN(1L),
     BASIC(2L);
 
-    long roleId;
+    private long roleId;
 
     private RoleType(long roleId) {
         this.roleId = roleId;

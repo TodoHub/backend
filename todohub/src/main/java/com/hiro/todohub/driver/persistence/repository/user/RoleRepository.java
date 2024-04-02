@@ -7,5 +7,5 @@ import com.hiro.todohub.driver.persistence.entity.user.RoleEntity;
 
 @Repository
 public interface RoleRepository extends JpaRepository<RoleEntity, Long> {
-    
+    RoleEntity findByName(String name);
 }
