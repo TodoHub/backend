@@ -1,4 +1,4 @@
-package com.hiro.todohub.domain.exception;
+package com.hiro.todohub.domain.exception.user;
 
 public class UserNotFoundException extends Exception {   
 }

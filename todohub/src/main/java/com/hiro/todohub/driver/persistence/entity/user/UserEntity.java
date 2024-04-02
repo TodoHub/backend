@@ -1,11 +1,11 @@
-package com.hiro.todohub.driver.persistence.entity;
+package com.hiro.todohub.driver.persistence.entity.user;
 
 import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.hiro.todohub.domain.data.user.dto.LoginRequest;
+import com.hiro.todohub.domain.data.dto.user.LoginRequest;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -28,12 +28,12 @@ public class UserEntity {
     private UUID userId;
 
     private String name;
-    private String state;
 
     @Column(unique = true)
     private String email;
     
     private String password;
+    private String state;
     private String bio;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -44,7 +44,7 @@ public class UserEntity {
     )
     private Set<RoleEntity> roles;
 
-    public UserEntity(UUID userId, String name, String state, String email, String password, String bio, Set<Role> roles) {
+    public UserEntity(UUID userId, String name, String email, String password, String state, String bio, Set<RoleEntity> roles) {
         this.userId = userId;
         this.name = name;
         this.state = state;
@@ -54,7 +54,7 @@ public class UserEntity {
         this.roles = roles;
     }
 
-    public User() {
+    public UserEntity() {
     }
 
     public UUID getUserId() {
@@ -105,11 +105,11 @@ public class UserEntity {
         this.bio = bio;
     }
 
-    public Set<Role> getRoles() {
+    public Set<RoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set<RoleEntity> roles) {
         this.roles = roles;
     }
     

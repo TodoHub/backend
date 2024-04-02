@@ -1,4 +1,4 @@
-package com.hiro.todohub.domain.service;
+package com.hiro.todohub.domain.service.user;
 
 import org.springframework.stereotype.Service;
 
