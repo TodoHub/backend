@@ -27,7 +27,7 @@ public class AdminUserConfig implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        RoleEntity roleAdmin = roleRepository.findByName(RoleType.ADMIN.name());
+        Optional<RoleEntity> roleAdmin = roleRepository.findByName(RoleType.ADMIN.name());
         Optional<UserEntity> userAdmin = userRepository.findByEmail("admin@admin.com");
 
         userAdmin.ifPresentOrElse(
@@ -37,7 +37,7 @@ public class AdminUserConfig implements CommandLineRunner {
             () -> {
                 UserEntity user = new UserEntity
                     ("Admin", "admin@admin.com", passwordEncoder.encode("admin"),
-                    "Rio de Janeiro", "Eu sou Admin", Set.of(roleAdmin));
+                    "Rio de Janeiro", "Eu sou Admin", Set.of(roleAdmin.get()));
 
                 userRepository.save(user);
             }

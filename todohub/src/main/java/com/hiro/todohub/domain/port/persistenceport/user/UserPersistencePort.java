@@ -6,4 +6,6 @@ public interface UserPersistencePort {
     User create(User user);
 
     User login(String email);
+
+    User findByEmail(String email);
 }
