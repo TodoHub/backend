@@ -35,3 +35,5 @@ build/
 ### Keys ###
 app.key
 app.key.pub
+/annotations
+/images
